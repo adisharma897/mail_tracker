@@ -21,6 +21,11 @@ FILENAME = 'job.png'
 class MailLogging(db.Model):
     email_id = db.Column(db.Integer, primary_key=True)
 
+    
+@app.route('/')
+def home():
+    return 'Hello, World!'
+
 @app.route("/aditya/<int:id>")
 def log_tracking(id):
     activity = MailLogging(email_id=id)
